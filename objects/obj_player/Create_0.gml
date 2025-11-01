@@ -3,14 +3,14 @@ xspeed = 0;
 yspeed = 0;
 
 maxspd_x = 2;
-maxspd_y = 4;
+maxspd_y = 8;
 
 xacc = 0.5;
 yacc = 0.5;
-ygrav = 0.2;
+ygrav = 0.25;
 
-jump_str = 3;
-max_jtime = 120;
+jump_str = 2;
+max_jtime = 40;
 jump_time = max_jtime;
 
 climb = -1;
@@ -30,3 +30,5 @@ inv = false;
 
 move_h = 0;
 move_v = 0;
+
+image_speed = 0;

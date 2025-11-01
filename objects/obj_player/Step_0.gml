@@ -16,14 +16,12 @@ if(climb)&&(grab == 1)
 	if(move_v != 0)
 	{
 		yspeed += yacc*move_v;
-		yspeed = clamp(yspeed,-1,1);
+		yspeed = clamp(yspeed,-1,2);
+		
 	}
-	else
+	else if(move_h == 0)
 	{
-		if(yspeed > 0)
-			yspeed -= yacc;
-		else if(yspeed < 0)
-			yspeed += yacc;
+		yspeed = global.spd;
 	}
 	
 	ygrav = 0;
@@ -49,8 +47,8 @@ yspeed = min(yspeed,maxspd_y);
 var move_r = keyboard_check(vk_right)
 var move_l = keyboard_check(vk_left);
 
-
-move_h = move_r-move_l
+if(inv == false)
+	move_h = move_r-move_l
 
 if(move_h != 0)
 {
@@ -73,11 +71,12 @@ if(jump)
 {
 	ygrav = 0.2;
 	grab = 0;
-	if(yspeed == 0)&&(jump_time > 0)
+	if(jump_time > 0)
 	{
 		yspeed = (-jump_str)*2;
 		jump_time = 0;
 	}
+	audio_stop_play_sound(snd_jump,0,false);
 }
 
 x += xspeed;
@@ -85,7 +84,8 @@ y += yspeed;
 
 if(bbox_bottom > (room_height+40))
 {
-	show_message("Game over!");
+	audio_stop_play_sound(snd_lose,0,false);
+	show_message("You successfully died!");
 	game_restart();
 	score = 0;
 	global.level = 1;
