@@ -75,8 +75,8 @@ if(jump)
 	{
 		yspeed = (-jump_str)*2;
 		jump_time = 0;
+		audio_stop_play_sound(snd_jump,0,false);
 	}
-	audio_stop_play_sound(snd_jump,0,false);
 }
 
 x += xspeed;
@@ -85,8 +85,10 @@ y += yspeed;
 if(bbox_bottom > (room_height+40))
 {
 	audio_stop_play_sound(snd_lose,0,false);
-	show_message("You successfully died!");
-	game_restart();
-	score = 0;
-	global.level = 1;
+	if(score > global.best)
+		global.best = score
+	with(instance_create_depth(0,0,-5,obj_pause))
+	{
+		gameover = true;
+	}
 }

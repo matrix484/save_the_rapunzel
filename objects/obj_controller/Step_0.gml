@@ -21,3 +21,14 @@ if(score > target)
 	global.level ++;
 	global.spd *= 1.10;
 }
+
+if(keyboard_check_pressed(vk_enter))
+{
+	if(!instance_exists(obj_pause))
+	{
+		with(instance_create_depth(0,0,-5,obj_pause))
+		{
+			gameover = false;
+		}
+	}
+}

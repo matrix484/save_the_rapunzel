@@ -12,6 +12,7 @@ if(inv == false)
 	else
 	{
 		ready = 1;
+		instance_destroy(myfire)
 	}
 	instance_destroy(other);
 }

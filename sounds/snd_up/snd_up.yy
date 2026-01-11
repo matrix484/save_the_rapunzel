@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"snd_up",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
   },
-  "bitDepth":1,
-  "bitRate":128,
+  "bitDepth":0,
+  "channelFormat":0,
   "compression":0,
+  "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.3034694,
+  "duration":0.30349207,
+  "exportDir":"",
   "name":"snd_up",
   "parent":{
     "name":"Sounds",
@@ -18,8 +20,7 @@
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
-  "sampleRate":44100,
+  "sampleRate":22050,
   "soundFile":"snd_up.wav",
-  "type":0,
   "volume":1.0,
 }
